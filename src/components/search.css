@@ -1,0 +1,57 @@
+.MediaItems{
+    overflow-x: auto;
+    gap: 1.5rem;
+    display: flex;
+    flex-direction: row;
+    padding-top: .5rem;
+    scrollbar-width: none;
+}
+
+
+.poster,  .movieCaption, img{
+    max-width: 160px;
+    max-height: 240px;
+}
+
+.truncate{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    position: relative;
+}
+
+.truncate:hover::after {
+    content: attr(title);
+    display: block;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    padding: 5px;
+    background-color: #fff;
+    z-index: 999;
+}
+
+.media-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    overflow-x: auto;
+    gap: 1.5rem;
+    padding-top: .5rem;
+  }
+
+  .arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+    cursor: pointer;
+  }
+  
+  .left-arrow {
+    left: 0;
+  }
+  
+  .right-arrow {
+    right: 0;
+  }

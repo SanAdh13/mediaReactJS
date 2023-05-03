@@ -27,12 +27,11 @@ function App() {
           </>
           )
         }
-
+        </div>
+        <div className='MediaContainer'>
+        {movieTitle && <SearchTV />}
         {tvTitle && <SearchMovie />}
         {randomMedia && <FeelingLucky />}
-        {movieTitle && <SearchTV />}
-          
-          
         </div>
     </div>
   );
