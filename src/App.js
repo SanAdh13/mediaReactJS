@@ -11,28 +11,28 @@ function App() {
   const [tvTitle, setTvTitle] = useState(false);
   const [randomMedia, setRandomMovie] = useState(false);
 
-  const TVOption = () => {setMovieTitle(true);setTvTitle(false);setRandomMovie(false);};
+  const MovieOption = () => {setMovieTitle(true);setTvTitle(false);setRandomMovie(false);};
 
-  const MovieOption = () => {setMovieTitle(false);setTvTitle(true);setRandomMovie(false);};
+  const TVOption = () => {setMovieTitle(false);setTvTitle(true);setRandomMovie(false);};
 
   const RandomOption = () => {setMovieTitle(false);setTvTitle(false);setRandomMovie(true);};
   return (
     <div className="App">
-        <div className='Options'>
-        {!movieTitle && !tvTitle && !randomMedia && (
-          <>
-            <button onClick={TVOption}>Search for TV Show</button>
-            <button onClick={MovieOption}>Search for Movies</button>
-            <button onClick={RandomOption}>I'm feeling lucky</button>
-          </>
-          )
-        }
-        </div>
+          {!movieTitle && !tvTitle && !randomMedia && (
+            <div className='Options'>
+              <button onClick={MovieOption}>Search for Movies</button>
+              <button onClick={TVOption}>Search for TV Show</button>
+              <button onClick={RandomOption}>I'm feeling lucky</button>
+            </div>
+            )
+          }
         <div className='MediaContainer'>
-        {movieTitle && <SearchTV />}
-        {tvTitle && <SearchMovie />}
-        {randomMedia && <FeelingLucky />}
+          {movieTitle && <SearchMovie />}
+          {tvTitle && <SearchTV />}
         </div>
+        <>
+        {randomMedia && <FeelingLucky />}
+        </>
     </div>
   );
 }
